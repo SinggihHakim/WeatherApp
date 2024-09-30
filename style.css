@@ -1,0 +1,211 @@
+/* Mengimpor font Poppins dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Aturan dasar untuk semua elemen */
+* {
+    margin: 0; /* Mengatur margin ke 0 untuk semua elemen */
+    padding: 0; /* Mengatur padding ke 0 untuk semua elemen */
+    box-sizing: border-box; /* Mengatur box-sizing agar padding dan border dimasukkan dalam lebar dan tinggi elemen */
+    font-family: "Poppins", sans-serif; /* Mengatur font menjadi Poppins dengan fallback sans-serif */
+    color: white; /* Mengatur warna teks menjadi putih */
+    font-weight: 600; /* Mengatur bobot font menjadi 600 */
+}
+
+/* Aturan untuk elemen body */
+body {
+    background: url(assets/bg.jpg); /* Mengatur gambar latar belakang */
+    width: 100%; /* Lebar body 100% */
+    height: 100vh; /* Tinggi body 100% dari viewport */
+    background-size: cover; /* Mengatur gambar latar belakang agar menutupi seluruh elemen */
+    background-position: center; /* Mengatur posisi gambar latar belakang ke tengah */
+    display: flex; /* Mengatur body sebagai flex container */
+    align-items: center; /* Menyelaraskan item di sumbu vertikal */
+    justify-content: center; /* Menyelaraskan item di sumbu horizontal */
+}
+
+/* Mengatur efek latar belakang pada body */
+body::before {
+    content: ""; /* Menambahkan konten kosong untuk efek */
+    position: absolute; /* Mengatur posisi absolut untuk efek */
+    width: 100%; /* Lebar 100% dari elemen parent */
+    height: 100vh; /* Tinggi 100% dari viewport */
+    background: rgb(0, 0, 0, 0.15); /* Latar belakang semi-transparan hitam */
+    backdrop-filter: blur(15px); /* Menerapkan efek blur pada latar belakang */
+}
+
+/* Kontainer utama untuk aplikasi cuaca */
+.main-container {
+    border: 1px solid; /* Mengatur border */
+    width: 300px; /* Lebar kontainer utama */
+    height: 496px; /* Tinggi kontainer utama */
+    z-index: 1; /* Menetapkan nilai z-index */
+    background: linear-gradient(
+        to top, rgb(0, 0, 0, 0.15),
+        rgb(255, 255, 255, 0.15)
+    ); /* Mengatur latar belakang dengan gradien */
+    border-radius: 12px; /* Membuat sudut border menjadi melengkung */
+    backdrop-filter: blur(100px); /* Menerapkan efek blur pada kontainer */
+    padding: 20px; /* Menambahkan padding di dalam kontainer */
+}
+
+/* Kontainer untuk input kota */
+.input-container {
+    position: relative; /* Mengatur posisi relatif untuk input */
+    margin-bottom: 25px; /* Menambahkan margin bawah */
+}
+
+/* Aturan untuk input kota */
+.city-input {
+    width: 100%; /* Lebar input 100% */
+    padding: 10px 16px; /* Menambahkan padding */
+    border-radius: 99px; /* Membuat sudut border input menjadi melengkung */
+    border: 3px solid transparent; /* Mengatur border menjadi transparan */
+    background: rgb(0, 0, 0, 0.15); /* Latar belakang semi-transparan */
+    outline: none; /* Menghilangkan outline saat input terfokus */
+    font-weight: 500; /* Mengatur bobot font menjadi 500 */
+    transition: 0.25s border; /* Menambahkan efek transisi pada border */
+    padding-right: 45px; /* Menambahkan padding kanan untuk menampung tombol pencarian */
+}
+
+/* Efek saat input kota terfokus */
+.city-input:focus {
+    border: 3px solid rgba(0, 0, 0, 0.15); /* Mengubah warna border saat terfokus */
+}
+
+/* Aturan untuk placeholder di input kota */
+.city-input::placeholder {
+    color: rgba(255, 255, 255, 0.75); /* Mengatur warna placeholder */
+}
+
+/* Aturan untuk tombol pencarian */
+.search-btn {
+    position: absolute; /* Mengatur posisi absolut untuk tombol pencarian */
+    right: 18px; /* Mengatur posisi tombol ke kanan */
+    top: 50%; /* Mengatur posisi tombol ke tengah vertikal */
+    transform: translateY(-50%); /* Menggeser tombol ke atas setengah tinggi untuk memusatkan vertikal */
+    background: none; /* Menghilangkan latar belakang tombol */
+    border: none; /* Menghilangkan border tombol */
+    display: flex; /* Mengatur tombol sebagai flex container */
+    cursor: pointer; /* Mengubah kursor menjadi pointer saat hover */
+}
+
+/* Aturan untuk teks biasa */
+.reguler-txt {
+    font-weight: 400; /* Mengatur bobot font menjadi 400 untuk teks biasa */
+}
+
+/* Kontainer untuk informasi cuaca */
+.weather-info {
+    display: flex; /* Mengatur sebagai flex container */
+    flex-direction: column; /* Mengatur arah kolom */
+    gap: 25px; /* Menambahkan jarak antar elemen */
+}
+
+/* Kontainer untuk ringkasan cuaca */
+.weather-summary-container {
+    display: flex; /* Mengatur sebagai flex container */
+    justify-content: space-between; /* Menyelaraskan item dengan ruang antar */
+    align-items: center; /* Menyelaraskan item di sumbu vertikal */
+}
+
+/* Aturan untuk gambar ringkasan cuaca */
+.weather-summary-img {
+    width: 120px; /* Mengatur lebar gambar ringkasan cuaca */
+    height: 120px; /* Mengatur tinggi gambar ringkasan cuaca */
+}
+
+/* Kontainer untuk kondisi cuaca */
+.weather-conditions-container {
+    display: flex; /* Mengatur sebagai flex container */
+    justify-content: space-between; /* Menyelaraskan item dengan ruang antar */
+}
+
+/* Item kondisi cuaca */
+.conditions-items {
+    display: flex; /* Mengatur sebagai flex container */
+    align-items: center; /* Menyelaraskan item di sumbu vertikal */
+    gap: 6px; /* Menambahkan jarak antar elemen */
+}
+
+/* Aturan untuk span di dalam item kondisi cuaca */
+.conditions-items span {
+    font-size: 30px; /* Mengatur ukuran font untuk span */
+}
+
+/* Kontainer untuk item perkiraan cuaca */
+.forecast-items-container {
+    display: flex; /* Mengatur sebagai flex container */
+    gap: 15px; /* Menambahkan jarak antar item */
+    overflow-y: hidden; /* Menyembunyikan overflow vertikal */
+    overflow-x: auto; /* Menambahkan scroll horizontal jika diperlukan */
+    padding-bottom: 12px; /* Menambahkan padding bawah */
+}
+
+/* Aturan untuk scrollbar di kontainer perkiraan cuaca */
+.forecast-items-container::-webkit-scrollbar {
+    height: 8px; /* Mengatur tinggi scrollbar */
+}
+
+.forecast-items-container::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0, 0.1); /* Mengatur latar belakang track scrollbar */
+    border-radius: 99px; /* Membuat sudut track scrollbar melengkung */
+}
+
+.forecast-items-container::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0, 0.15); /* Mengatur warna thumb scrollbar */
+    border-radius: 99px; /* Membuat sudut thumb scrollbar melengkung */
+}
+
+/* Aturan untuk item perkiraan cuaca */
+.forecast-item {
+    min-width: 70px; /* Mengatur lebar minimum untuk item perkiraan */
+    background: rgba(255, 255, 255, 0.1); /* Mengatur latar belakang item perkiraan */
+    display: flex; /* Mengatur sebagai flex container */
+    flex-direction: column; /* Mengatur arah kolom */
+    gap: 6px; /* Menambahkan jarak antar elemen */
+    padding: 10px; /* Menambahkan padding di dalam item */
+    align-items: center; /* Menyelaraskan item di sumbu horizontal */
+    border-radius: 12px; /* Membuat sudut border item menjadi melengkung */
+    transition: 0.3s; /* Menambahkan efek transisi saat hover */
+}
+
+/* Efek saat item perkiraan dihover */
+.forecast-item:hover {
+    background: rgba(255, 255, 255, 0.15); /* Mengubah latar belakang saat dihover */
+}
+
+/* Aturan untuk gambar di dalam item perkiraan */
+.forecast-item img {
+    width: 35px; /* Mengatur lebar gambar di dalam item perkiraan */
+    height: 35px; /* Mengatur tinggi gambar di dalam item perkiraan */
+}
+
+/* Kontainer untuk lokasi dan tanggal */
+.location-date-container {
+    display: flex; /* Mengatur sebagai flex container */
+    justify-content: space-between; /* Menyelaraskan item dengan ruang antar */
+    align-items: center; /* Menyelaraskan item di sumbu vertikal */
+}
+
+/* Kontainer untuk lokasi */
+.location {
+    display: flex; /* Mengatur sebagai flex container */
+    align-items: center; /* Menyelaraskan item di sumbu vertikal */
+    gap: 6px; /* Menambahkan jarak antar elemen */
+}
+
+/* Kontainer untuk pesan */
+.section-message {
+    display: flex; /* Mengatur sebagai flex container */
+    flex-direction: column; /* Mengatur arah kolom */
+    align-items: center; /* Menyelaraskan item di sumbu horizontal */
+    text-align: center; /* Mengatur teks agar rata tengah */
+    gap: 15px; /* Menambahkan jarak antar elemen */
+    margin-bottom: 25%; /* Menambahkan margin bawah untuk ruang */
+}
+
+/* Aturan untuk gambar di dalam pesan */
+.message-img {
+    height: 180px; /* Mengatur tinggi gambar di dalam pesan */
+    width: fit-content; /* Mengatur lebar gambar agar sesuai dengan konten */
+}
