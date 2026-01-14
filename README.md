@@ -1,21 +1,4 @@
-Here is a professional **GitHub Repository Description** and a complete **README.md** file for your Weather App project, written in English.
 
-### 1. GitHub Repository Description (About)
-
-**Description:**
-
-> A sleek and responsive Weather Application built with Vanilla JavaScript. Features real-time weather updates, dynamic background icons, and a user-friendly city search interface. 🌦️⚡
-
-**Topics (Optional tags):**
-`html5` `css3` `javascript` `weather-app` `api-integration` `openweathermap` `frontend`
-
----
-
-### 2. README.md
-
-You can copy the code block below directly into your `README.md` file.
-
-```markdown
 # ☁️ WeatherApp
 
 A simple, beautiful, and responsive weather application built using **HTML**, **CSS**, and **Vanilla JavaScript**. This project allows users to check real-time weather conditions for any city worldwide using the OpenWeatherMap API.
