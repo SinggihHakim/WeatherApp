@@ -4,7 +4,8 @@
 A simple, beautiful, and responsive weather application built using **HTML**, **CSS**, and **Vanilla JavaScript**. This project allows users to check real-time weather conditions for any city worldwide using the OpenWeatherMap API.
 
 <div align="center">
-  <img src="https://placehold.co/600x400?text=Weather+App+Preview" alt="Weather App Screenshot" width="80%">
+  <img width="80%" alt="image" src="https://github.com/user-attachments/assets/82584665-e17a-4302-abfe-17491a676b76" />
+
 </div>
 
 ## 📖 Overview
@@ -75,7 +76,7 @@ cd weatherapp
 
 | Search Interface | Weather Result | Not Found |
 | --- | --- | --- |
-| <img src="./assets/message/search-city.png" width="200"> | *Your screenshot here* | <img src="./assets/message/not-found.png" width="200"> |
+| <img src="./assets/message/search-city.png" width="200"> | <img width="80%" alt="image" src="https://github.com/user-attachments/assets/82584665-e17a-4302-abfe-17491a676b76" /> | <img src="./assets/message/not-found.png" width="200"> |
 
 ## 🤝 Contributing
 
